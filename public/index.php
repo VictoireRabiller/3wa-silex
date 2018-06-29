@@ -32,21 +32,14 @@ $app->get('/flickr-photos', function () use ($app) {
     ));
 })->bind("flickr");
 
-$app->get('/customers', function (Application $app, Request $request) {
+$app->get('/customers', 'MonProjet\Controller\CustomersController::main')
+	->bind('customers');
 
-	$search = $request->query->get('search');
+$app->get('/bonjour/{name}', function ($name) use ($app) {
 
-	 return $app['twig']->render('customers.twig', array(
-        'name' => 'dalton',
-        'firstname' => "joe"
-    ));
-})->bind('customers');
 
-$app->get('/bonjour', function () use ($app) {
-
-	 return $app['twig']->render('home.twig', array(
-        'name' => 'dalton',
-        'firstname' => "joe"
+	 return $app['twig']->render('bonjour.twig', array(
+        'name' => $name
     ));
 })->bind("bonjour");
 

@@ -5,6 +5,10 @@
 	<button>rechercher</button>
 </form>
 
-
+<ul>
+{% for customer in customers %}
+	<li>{{ customer.customerName }}</li>
+{% endfor %}
+</ul>
 </body>
 </html>
