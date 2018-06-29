@@ -11,10 +11,8 @@ class CustomersController {
 
 	 public function main(Application $app)  { 
 
-
 	 	$customerService = new CustomerService();
 	 	$customers = $customerService->getCustomerList();
-
 	 
 		return $app['twig']->render('customers.twig', array(
 	        'customers' => $customers

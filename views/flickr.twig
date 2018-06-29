@@ -1,0 +1,16 @@
+{{ include('header.twig') }}
+
+	<h1>Flickr page</h1>
+
+<form method="get">
+	<input name="tags">
+	<button>chercher</button>
+</form>
+
+{% for photo in photos %}
+	<img src="{{ photo.getMediumUrl() }}">
+{% endfor %}
+
+	
+</body>
+</html>

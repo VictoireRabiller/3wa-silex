@@ -24,13 +24,8 @@ $app->get('/hello', function () use ($app) {
     ));
 })->bind('hello');
 
-$app->get('/flickr-photos', function () use ($app) {
-
-	 return $app['twig']->render('home.twig', array(
-        'name' => 'dalton',
-        'firstname' => "joe"
-    ));
-})->bind("flickr");
+$app->get('/flickr', 'MonProjet\Controller\FlickrController::main')
+	->bind('flickr');
 
 $app->get('/customers', 'MonProjet\Controller\CustomersController::main')
 	->bind('customers');

@@ -1,6 +1,6 @@
 <?php
 
-namespace MonProjet\Service;
+namespace MonProjet\Infrastructure;
 
 class Database
 {

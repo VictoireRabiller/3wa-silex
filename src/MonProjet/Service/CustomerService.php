@@ -2,9 +2,10 @@
 
 namespace MonProjet\Service;
 
+use MonProjet\Infrastructure\Database;
+
 class CustomerService {
 	
-
 	function getCustomerList() {
 
 		$db = new Database();
